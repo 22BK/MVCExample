@@ -16,5 +16,20 @@ namespace Personel.UI.Controllers
             var model = db.Departman.ToList();
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult Yeni()
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Yeni(Departman departman)
+        {
+            db.Departman.Add(departman);
+            db.SaveChanges();
+            return RedirectToAction("Index","Departman");
+        }
     }
 }
