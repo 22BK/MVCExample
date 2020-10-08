@@ -3,14 +3,15 @@
     ViewBag.Title = "Yeni";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+    
 
-
-@using (Html.BeginForm("Yeni", "Departman", FormMethod.Post))
+@using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post))
 {
     <div class="form-group">
         @Html.LabelFor(x => x.Ad)
         @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
     </div>
-    <button type="submit" class="btn btn-success">Ekle</button>
+    @Html.HiddenFor(x=>x.Id)
+    <button type="submit" class="btn btn-success">Kaydet</button>
 }
 

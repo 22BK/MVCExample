@@ -102,16 +102,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\EntityFramework\PersonelDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PersonelDB.Context.cs</LastGenOutput>
-      <DependentUpon>PersonelDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\EntityFramework\PersonelDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PersonelDB.edmx</DependentUpon>
-      <LastGenOutput>PersonelDB.cs</LastGenOutput>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -120,13 +110,30 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Models\EntityFramework\PersonelDbEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PersonelDbEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\EntityFramework\PersonelDbEntities.edmx.diagram">
+      <DependentUpon>PersonelDbEntities.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Models\EntityFramework\PersonelDbEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PersonelDbEntities.edmx</DependentUpon>
+      <LastGenOutput>PersonelDbEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EntityFramework\PersonelDbEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PersonelDbEntities.edmx</DependentUpon>
+      <LastGenOutput>PersonelDbEntities.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Web.config" />
-    <Content Include="Views\Departman\Yeni.cshtml" />
+    <Content Include="Views\Departman\DepartmanForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -135,37 +142,30 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\Departman.cs">
-      <DependentUpon>PersonelDB.tt</DependentUpon>
+      <DependentUpon>PersonelDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\EntityFramework\Personel.cs">
-      <DependentUpon>PersonelDB.tt</DependentUpon>
+      <DependentUpon>PersonelDbEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EntityFramework\PersonelDB.Context.cs">
+    <Compile Include="Models\EntityFramework\PersonelDbEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PersonelDB.Context.tt</DependentUpon>
+      <DependentUpon>PersonelDbEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EntityFramework\PersonelDB.cs">
+    <Compile Include="Models\EntityFramework\PersonelDbEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PersonelDB.tt</DependentUpon>
+      <DependentUpon>PersonelDbEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EntityFramework\PersonelDB.Designer.cs">
+    <Compile Include="Models\EntityFramework\PersonelDbEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PersonelDB.edmx</DependentUpon>
+      <DependentUpon>PersonelDbEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
-    <EntityDeploy Include="Models\EntityFramework\PersonelDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PersonelDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\EntityFramework\PersonelDB.edmx.diagram">
-      <DependentUpon>PersonelDB.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Departman\Index.cshtml" />

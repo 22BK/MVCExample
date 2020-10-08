@@ -14,16 +14,9 @@ namespace Personel.UI.Models.EntityFramework
     
     public partial class Departman
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Departman()
-        {
-            this.Personel = new HashSet<Personel>();
-        }
-    
         public int Id { get; set; }
         public string Ad { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Personel> Personel { get; set; }
+        public virtual Personel Personel { get; set; }
     }
 }

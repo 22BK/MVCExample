@@ -21,15 +21,37 @@ namespace Personel.UI.Controllers
         public ActionResult Yeni()
         {
             
-            return View();
+            return View("DepartmanForm");
         }
 
         [HttpPost]
-        public ActionResult Yeni(Departman departman)
+        public ActionResult Kaydet(Departman departman)
         {
-            db.Departman.Add(departman);
+            if (departman.Id==0)
+            {
+                db.Departman.Add(departman);
+            }
+            else
+            {
+                var guncellenecekDepartman = db.Departman.Find(departman.Id);
+                if (guncellenecekDepartman==null)
+                {
+                    return HttpNotFound();
+                }
+                guncellenecekDepartman.Ad = departman.Ad;
+            }
             db.SaveChanges();
             return RedirectToAction("Index","Departman");
+        }
+
+        public ActionResult Guncelle(int id)
+        {
+            var model = db.Departman.Find(id);
+            if (model!=null)
+            {
+                return View("DepartmanForm", model);
+            }
+            return HttpNotFound(); 
         }
     }
 }

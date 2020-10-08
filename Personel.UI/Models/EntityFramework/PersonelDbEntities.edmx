@@ -9,8 +9,8 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Ad" Type="nchar" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Personel">
           <Key>
@@ -27,14 +27,14 @@
           <Property Name="EvliMi" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_Personel_Departman">
-          <End Role="Departman" Type="Self.Departman" Multiplicity="0..1" />
-          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <End Role="Departman" Type="Self.Departman" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Departman">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Personel">
-              <PropertyRef Name="DepartmanId" />
+              <PropertyRef Name="Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -55,8 +55,8 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Personel" Relationship="Self.FK_Personel_Departman" FromRole="Departman" ToRole="Personel" />
         </EntityType>
         <EntityType Name="Personel">
@@ -75,14 +75,14 @@
           <NavigationProperty Name="Departman" Relationship="Self.FK_Personel_Departman" FromRole="Personel" ToRole="Departman" />
         </EntityType>
         <Association Name="FK_Personel_Departman">
-          <End Role="Departman" Type="Self.Departman" Multiplicity="0..1" />
-          <End Role="Personel" Type="Self.Personel" Multiplicity="*" />
+          <End Role="Departman" Type="Self.Departman" Multiplicity="1" />
+          <End Role="Personel" Type="Self.Personel" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Departman">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Personel">
-              <PropertyRef Name="DepartmanId" />
+              <PropertyRef Name="Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
