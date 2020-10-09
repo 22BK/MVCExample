@@ -53,5 +53,17 @@ namespace Personel.UI.Controllers
             }
             return HttpNotFound(); 
         }
+
+        public ActionResult Sil(int id)
+        {
+            var silinecekDepartman = db.Departman.Find(id);
+            if (silinecekDepartman==null)
+            {
+                return HttpNotFound();
+            }
+            db.Departman.Remove(silinecekDepartman);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
