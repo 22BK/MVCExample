@@ -1,0 +1,37 @@
+﻿@model List<Personel.UI.Models.EntityFramework.Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Yeni Personel","Yeni",null,new {@class="btn btn-success" })
+<h2>Personel Listesi</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Departman</th>
+            <th>Maas</th>
+            <th>Yas</th>
+            <th>Dogum Tarihi</th>
+            <th>Cinsiyet</th>
+            <th>Evlilik Durumu</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personel in Model)
+        {
+        <tr>
+            <td>@personel.Ad</td>
+            <td>@personel.Soyad</td>
+            <td>@personel.Departman.Ad</td>     @*<td>@personel.Departman.Ad</td> departman isimleri bu şekilde ekrana gönderildiği zaman her personel için sql e sorgu gidiyor ( entitiy diagramında boş bir yere sağ tıklayıp properties açılır ve lazyLoading özelliğinin aktif olduğu görülür kapatırsak bu özelliği kullanamayız bu yüzden personel controller içinde eager loading kullanılması lazım (include) lazyloading ile her personel için 1 sorgu gönderilirken eager loading ile sadece tek bir sorgu gönderiliyor) *@
+            <td>@personel.Maas</td>
+            <td>@(DateTime.Now.Year - personel.DogumTarihi.Value.Year)</td>
+            <td>@personel.DogumTarihi.Value.ToString("dd-MM-yyyy")</td>
+            <td>@(personel.Cinsiyet == true ? "Erkek" : "Kadın")</td>
+            <td>@(personel.EvliMi == true ? "Evli" : "Bekar")</td>
+        </tr>
+        }
+    </tbody>
+</table>

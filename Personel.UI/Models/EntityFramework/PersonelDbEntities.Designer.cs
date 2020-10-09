@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\bugra\source\repos\MVCExample\Personel.UI\Models\EntityFramework\PersonelDbEntities.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\bugra\source\repos\MVCExample\Personel.UI\Models\EntityFramework\PersonelDBEntities.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
