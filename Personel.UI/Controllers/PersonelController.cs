@@ -30,6 +30,7 @@ namespace Personel.UI.Controllers
                 );
         }
 
+        [ValidateAntiForgeryToken]
         public ActionResult Kaydet(Personel.UI.Models.EntityFramework.Personel personel)
         {
             if (!ModelState.IsValid)

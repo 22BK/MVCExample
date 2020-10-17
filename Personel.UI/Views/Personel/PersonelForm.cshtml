@@ -9,6 +9,7 @@
 <h2>Personel Form</h2>
 @using (Html.BeginForm("Kaydet", "Personel", FormMethod.Post))
 {
+    @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(x => x.Personel.Ad)
         @Html.TextBoxFor(x => x.Personel.Ad, new { @class = "form-control" })

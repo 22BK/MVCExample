@@ -25,6 +25,7 @@ namespace Personel.UI.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Kaydet(Departman departman)
         {
             if (!ModelState.IsValid)
