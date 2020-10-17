@@ -14,12 +14,13 @@
 </head>
 <body>
     @Html.Partial("_Navbar")
-    <div class="container"> 
+    <div class="container">
         @RenderBody()
     </div>
-    
+
     <script src="~/Scripts/jquery-1.9.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    @RenderSection("scripts",false)
+    <script src="~/Scripts/custom.js"></script>
+    @RenderSection("scripts", false)
 </body>
 </html>
