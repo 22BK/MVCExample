@@ -387,6 +387,7 @@
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -429,6 +430,7 @@
     <Content Include="Views\Kullanici\Details.cshtml" />
     <Content Include="Views\Kullanici\Edit.cshtml" />
     <Content Include="Views\Kullanici\Index.cshtml" />
+    <Content Include="Views\Security\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

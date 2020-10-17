@@ -10,7 +10,8 @@ namespace Personel.UI.Controllers
     public class DepartmanController : Controller
     {
         PersonelDBEntities db = new PersonelDBEntities();
-        // GET: Departman
+        
+        
         public ActionResult Index()
         {
             var model = db.Departman.ToList();
