@@ -23,7 +23,8 @@ namespace Personel.UI.Controllers
         {
             var model = new PersonelFormViewModel()
             {
-                Departmanlar = db.Departman.ToList()
+                Departmanlar = db.Departman.ToList(),
+                Personel = new Personel.UI.Models.EntityFramework.Personel()
             };
             return View("PersonelForm",model
                 );
@@ -31,6 +32,15 @@ namespace Personel.UI.Controllers
 
         public ActionResult Kaydet(Personel.UI.Models.EntityFramework.Personel personel)
         {
+            if (!ModelState.IsValid)
+            {
+                var model = new PersonelFormViewModel()
+                {
+                    Departmanlar = db.Departman.ToList(),
+                    Personel = personel
+                };
+                return View("PersonelForm", model);
+            }
             if (personel.Id==0) // Kaydetme
             {
                 db.Personel.Add(personel);

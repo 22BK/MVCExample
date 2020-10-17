@@ -20,13 +20,17 @@ namespace Personel.UI.Controllers
         [HttpGet]
         public ActionResult Yeni()
         {
-            
-            return View("DepartmanForm");
+
+            return View("DepartmanForm", new Departman());
         }
 
         [HttpPost]
         public ActionResult Kaydet(Departman departman)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("DepartmanForm");
+            }
             if (departman.Id==0)
             {
                 db.Departman.Add(departman);

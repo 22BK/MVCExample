@@ -12,22 +12,27 @@
     <div class="form-group">
         @Html.LabelFor(x => x.Personel.Ad)
         @Html.TextBoxFor(x => x.Personel.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x=>x.Personel.Ad)
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Personel.Soyad)
         @Html.TextBoxFor(x => x.Personel.Soyad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Personel.Soyad)
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Personel.DepartmanId)
-        @Html.DropDownListFor(x => x.Personel.DepartmanId, new SelectList(Model.Departmanlar, "Id", "Ad"),"Departman Seçiniz", new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.Personel.DepartmanId, new SelectList(Model.Departmanlar, "Id", "Ad"), "Departman Seçiniz", new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Personel.DepartmanId)
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Personel.Maas)
         @Html.TextBoxFor(x => x.Personel.Maas, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Personel.Maas)
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Personel.DogumTarihi)
-        @Html.TextBoxFor(x => x.Personel.DogumTarihi,("0:yyy-MM-dd"), new { @class = "form-control",type="date" })
+        @Html.TextBoxFor(x => x.Personel.DogumTarihi, ("0:yyy-MM-dd"), new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(x => x.Personel.DogumTarihi)
     </div>
     <div class="radio">
         <label>
@@ -36,6 +41,7 @@
         <label>
             @Html.RadioButtonFor(x => x.Personel.Cinsiyet, false) Kadın
         </label>
+        @Html.ValidationMessageFor(x => x.Personel.Cinsiyet)
     </div>
     <div class="checkbox">
         <label>
