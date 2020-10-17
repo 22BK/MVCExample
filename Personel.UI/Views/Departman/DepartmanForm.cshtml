@@ -3,16 +3,21 @@
     ViewBag.Title = "Yeni";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    
+
 
 @using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post))
 {
     <div class="form-group">
         @Html.LabelFor(x => x.Ad)
         @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x=>x.Ad)
+        @Html.ValidationMessageFor(x => x.Ad)
     </div>
-    @Html.HiddenFor(x=>x.Id)
+    @Html.HiddenFor(x => x.Id)
     <button type="submit" class="btn btn-success">Kaydet</button>
+}
+
+@section scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
 
