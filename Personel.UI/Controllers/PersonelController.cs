@@ -76,5 +76,11 @@ namespace Personel.UI.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult PersonelleriListele(int id)
+        {
+            var model = db.Personel.Where(x=>x.Departman.Id==id).ToList();
+            return PartialView(model);
+        }
     }
 }
