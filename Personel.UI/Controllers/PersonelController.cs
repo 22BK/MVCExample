@@ -13,7 +13,8 @@ namespace Personel.UI.Controllers
     public class PersonelController : Controller
     {
         PersonelDBEntities db = new PersonelDBEntities();
-        // GET: Personel
+        
+        [OutputCache(Duration =30)] // aşağıdaki db sorgusunu cache e atıp 30saniyede bir yenilemesini sağlıyor büyü ksorgularda performans arttırıcı olarak kullanılabilir fakat yeni eklenen personel ya da güncellenen personel varsa 30sn dolduktan sonra listede görüntülenebilir
         public ActionResult Index()
         {
             var model = db.Personel.Include(x=>x.Departman).ToList();
