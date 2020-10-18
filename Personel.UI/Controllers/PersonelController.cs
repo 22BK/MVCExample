@@ -82,5 +82,11 @@ namespace Personel.UI.Controllers
             var model = db.Personel.Where(x=>x.Departman.Id==id).ToList();
             return PartialView(model);
         }
+
+        public ActionResult ToplamMaas()
+        {
+            ViewBag.Maas = db.Personel.Sum(x=>x.Maas);
+            return PartialView();
+        }
     }
 }

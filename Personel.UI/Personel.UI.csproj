@@ -419,6 +419,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\PersonelRoleProvider.cs" />
+    <Compile Include="ViewModels\MesajViewModel.cs" />
     <Compile Include="ViewModels\PersonelFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -435,6 +436,8 @@
     <Content Include="Views\Kullanici\Index.cshtml" />
     <Content Include="Views\Security\Login.cshtml" />
     <Content Include="Views\Personel\PersonelleriListele.cshtml" />
+    <Content Include="Views\Personel\ToplamMaas.cshtml" />
+    <Content Include="Views\Shared\_Mesaj.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,5 @@
 ﻿using Personel.UI.Models.EntityFramework;
+using Personel.UI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,9 +35,12 @@ namespace Personel.UI.Controllers
             {
                 return View("DepartmanForm");
             }
+
+            MesajViewModel model = new MesajViewModel();
             if (departman.Id==0)
             {
                 db.Departman.Add(departman);
+                model.Mesaj =departman.Ad+ " departmanı eklendi";
             }
             else
             {
@@ -46,9 +50,13 @@ namespace Personel.UI.Controllers
                     return HttpNotFound();
                 }
                 guncellenecekDepartman.Ad = departman.Ad;
+                model.Mesaj = departman.Ad + " departmanı güncellendi";
             }
             db.SaveChanges();
-            return RedirectToAction("Index","Departman");
+            model.Status = true;
+            model.LinkText = "Departman Listesi";
+            model.Url = "/Departman";
+            return View("_Mesaj",model);
         }
 
         public ActionResult Guncelle(int id)
