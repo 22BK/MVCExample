@@ -416,6 +416,7 @@
       <DependentUpon>PersonelDBEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\PersonelRoleProvider.cs" />
     <Compile Include="ViewModels\PersonelFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Personel.UI.Controllers
 {
+    [Authorize(Roles = "A,U")]
     public class DepartmanController : Controller
     {
         PersonelDBEntities db = new PersonelDBEntities();

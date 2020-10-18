@@ -10,6 +10,7 @@ using Personel.UI.Models.EntityFramework;
 
 namespace Personel.UI.Controllers
 {
+    [Authorize(Roles = "A")]
     public class KullaniciController : Controller
     {
         private PersonelDBEntities db = new PersonelDBEntities();
