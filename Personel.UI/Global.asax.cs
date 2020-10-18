@@ -17,6 +17,7 @@ namespace Personel.UI
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            GlobalFilters.Filters.Add(new HandleErrorAttribute());
         }
     }
 }

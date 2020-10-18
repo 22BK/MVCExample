@@ -17,6 +17,8 @@ namespace Personel.UI.Controllers
         public ActionResult Index()
         {
             var model = db.Departman.ToList();
+            //int a = 0, b = 10;
+            //int c = b / a; // rıntime error oluşturmak için
             return View(model);
         }
 
